@@ -11,7 +11,7 @@ public class Doctor {
         this.connection = connection;
     }
     public void viewDoctor(){
-        String query = "Select * from patient";
+        String query = "Select * from doctors";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();

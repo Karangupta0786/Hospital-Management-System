@@ -32,15 +32,19 @@ public class HospitalManagementSystem {
                     case 1:
                         //add patient
                         patient.addPatient();
+                        break;
                     case 2:
                         //view patient
                         patient.viewPatient();
+                        break;
                     case 3:
                         //view doctor
                         doctor.viewDoctor();
+                        break;
                     case 4:
                         //book appointment
                         bookAppointment(patient,doctor,connection,scanner);
+                        break;
                     case 5:
                         //exit
                         System.out.println("Thanks for visiting.");
@@ -68,7 +72,8 @@ public class HospitalManagementSystem {
                     PreparedStatement preparedStatement = connection.prepareStatement(appointmentQuery);
                     preparedStatement.setInt(1,patientId);
                     preparedStatement.setInt(2,doctorId);
-                    preparedStatement.setString(3,appointmentQuery);
+//                    preparedStatement.setString(3,appointmentQuery);
+                    preparedStatement.setString(3,appointmentDate);
                     int rowsAffected = preparedStatement.executeUpdate();
                     if (rowsAffected>0){
                         System.out.println("Appointment booked");
